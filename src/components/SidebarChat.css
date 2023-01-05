@@ -2,9 +2,9 @@
     display: flex;
     padding: 20px;
     cursor: pointer;
-    
     background-color: #212c33;
     color: #e9edef;
+    align-items: center;
     
 }
 .sidebarChat:hover {
@@ -26,11 +26,13 @@
     margin-left: 10px;
     max-width: 400px;
     overflow: hidden;
-    word-wrap: break-word;
+    
 }
 .sidebarChat__lastmessage > p{
     font-size: 14px;
     color: #88979f;
+    overflow: hidden;
+    max-width: 80%;
 }
 
 a{

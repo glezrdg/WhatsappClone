@@ -14,8 +14,10 @@
     top: 0;
     bottom: 0;
     left: 0;
-    
   }
+.sidebar__headerProfile{
+    width: 80%;
+}
 }   
 .sidebar__headerProfile{
     display: flex;
@@ -24,8 +26,10 @@
     width: 50%;
     color: #afbac1;
 }
+
 .sidebar__headerProfile > h3{
     font-weight: 400;
+    font-size: 14px;
     
 }
 
@@ -53,7 +57,7 @@
 .sidebar__searchContainer > input{
     border:none;
     color: #afbac1;
-    width: 90%;
+    width: 85%;
     background-color: #212c33;
 }
 .sidebar__searchContainer > input:focus{
@@ -66,7 +70,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    border-right: 1px solid lightgray;
+    border-right: 1px solid #313131;
 }
     
 .sidebar__headerRight {

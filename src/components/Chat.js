@@ -76,10 +76,11 @@ function Chat() {
               message.name === user.displayName && "chat__receiver"
             }`}
           >
+            <Avatar src={user.photoURL} sx={{ width: 56, height: 56 }} />
             <span className="chat__name">{message.name}</span>
             <span className="chat__messageitself">{message.message}</span>
             <span className="chat__timestamp">
-              {new Date(message.timestamp?.toDate()).toUTCString()}
+              {new Date(message.timestamp?.toDate()).toLocaleTimeString()}
             </span>
           </p>
         ))}

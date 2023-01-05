@@ -45,6 +45,7 @@ function SidebarChat({ id, name, addNewChat }) {
           <div className="sidebarChat__lastmessage">
             <p>
               {messages[0]?.name}: {messages[0]?.message}
+              <span>...</span>
             </p>
           </div>
         </div>
