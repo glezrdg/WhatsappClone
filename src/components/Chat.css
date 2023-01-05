@@ -3,6 +3,11 @@
     flex: 0.65;
     flex-direction: column;
 }
+@media (max-width: 800px) {
+    .chat {
+     display: none;
+    }
+  }
 .chat__header{
     padding: 20px;
     display: flex;
@@ -49,7 +54,14 @@
     border-radius: 10px;
     width: fit-content;
     margin-bottom: 30px;
+    max-width: 300px;
+    word-wrap: break-word;
 }
+div.chat__messageitself{
+   
+
+}
+
 .chat__name{
     position: absolute;
     top: -15px;
