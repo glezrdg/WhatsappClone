@@ -17,6 +17,7 @@ function Chat() {
   const [messages, setMessages] = useState([]);
   const [{ user }, dispatch] = useStateValue();
   const ref = useRef(null);
+  const bottomRef = useRef(null);
 
   useEffect(() => {
     if (roomId) {
@@ -37,6 +38,10 @@ function Chat() {
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
   }, [roomId]);
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -86,6 +91,7 @@ function Chat() {
             </span>
           </p>
         ))}
+        <div ref={bottomRef} />
       </div>
       <div className="chat__footer">
         <div>
