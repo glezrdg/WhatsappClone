@@ -17,7 +17,6 @@ function SidebarChat({ id, name, addNewChat }) {
         .onSnapshot((snapshot) => {
           setMessages(snapshot.docs.map((doc) => doc.data()));
         });
-      console.log(messages);
     }
   }, [id]);
 

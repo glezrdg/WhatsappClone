@@ -16,7 +16,7 @@ function Chat() {
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([]);
   const [{ user }, dispatch] = useStateValue();
-  const ref = useRef(null);
+
   const bottomRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +32,7 @@ function Chat() {
         .onSnapshot((snapshot) =>
           setMessages(snapshot.docs.map((doc) => doc.data()))
         );
+      bottomRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [roomId]);
 
@@ -47,11 +48,11 @@ function Chat() {
     e.preventDefault();
 
     db.collection("rooms").doc(roomId).collection("messages").add({
+      photo: user.photoURL,
       message: input,
       name: user.displayName,
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
-
     setInput("");
   };
   return (
@@ -78,11 +79,12 @@ function Chat() {
       <div className="chat__body">
         {messages.map((message) => (
           <p
+            key={messages.id}
             className={`chat__message ${
               message.name === user.displayName && "chat__receiver"
             }`}
           >
-            <Avatar src={user.photoURL} className="avatar" />
+            <img src={message.photo} className="avatar" />
 
             <span className="chat__name">{message.name}</span>
             <span className="chat__messageitself">{message.message}</span>
