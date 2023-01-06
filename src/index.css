@@ -3,14 +3,14 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-::-webkit-scrollbar {
-  width: 0px;
-}
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-
+::-webkit-scrollbar {
+  display: none;
+}
 * {
   margin: 0;
 }

@@ -1,6 +1,6 @@
 import db from "../firebase";
 import firebase from "firebase";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Chat.css";
 import { useParams } from "react-router-dom";
 import { Avatar, IconButton } from "@material-ui/core";
@@ -16,6 +16,7 @@ function Chat() {
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([]);
   const [{ user }, dispatch] = useStateValue();
+  const ref = useRef(null);
 
   useEffect(() => {
     if (roomId) {
@@ -76,7 +77,8 @@ function Chat() {
               message.name === user.displayName && "chat__receiver"
             }`}
           >
-            <Avatar src={user.photoURL} sx={{ width: 56, height: 56 }} />
+            <Avatar src={user.photoURL} className="avatar" />
+
             <span className="chat__name">{message.name}</span>
             <span className="chat__messageitself">{message.message}</span>
             <span className="chat__timestamp">

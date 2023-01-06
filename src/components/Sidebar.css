@@ -1,24 +1,11 @@
 .sidebar{
+  background-color: #212c33;
     display: flex;
-    flex: 0.35;
     flex-direction: column;
-   
+   width: 30vw;
 }
 
-@media (max-width: 800px) {
-  .sidebar {
-    height: 100vh;
-    width: 100vw;
-    background-color: #212c33;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-  }
-.sidebar__headerProfile{
-    width: 80%;
-}
-}   
+
 .sidebar__headerProfile{
     display: flex;
     align-items: center;
@@ -30,7 +17,7 @@
 .sidebar__headerProfile > h3{
     font-weight: 400;
     font-size: 14px;
-    
+    margin-left: 10px;
 }
 
 .sidebar__search{
@@ -84,7 +71,24 @@
 }
 
 .sidebar__chats{
-    flex: 1;
-    background-color: white;
+    
     overflow: scroll;
+    
 }
+
+
+@media (max-width: 700px) {
+    .sidebar{
+       width: 100vw;
+       height: 30vh;
+    }
+    .sidebarChat{
+        height: 20px;
+        
+        font-size: 12px;
+
+    }
+    .sidebar__header{
+        height: 20px;
+    }
+   }   

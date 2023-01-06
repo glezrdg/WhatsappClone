@@ -11,8 +11,13 @@ import { useStateValue } from "../StateProvider";
 
 function Sidebar() {
   const [rooms, setRooms] = useState([]);
+  const [chat, setChat] = useState("");
 
   const [{ user }, dispatch] = useStateValue();
+
+  const handleChange = (e) => {
+    setChat(e.target.value);
+  };
 
   useEffect(() => {
     const unsubscribe = db.collection("rooms").onSnapshot((snapshot) =>
@@ -51,7 +56,12 @@ function Sidebar() {
       <div className="sidebar__search">
         <div className="sidebar__searchContainer">
           <SearchOutlined />
-          <input placeholder="Search or start a new chat" type="text" />
+          <input
+            placeholder="Search or start a new chat"
+            type="text"
+            value={chat}
+            onChange={handleChange}
+          />
         </div>
       </div>
       <div className="sidebar__chats ">

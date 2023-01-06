@@ -20,6 +20,8 @@ function Login() {
   };
   return (
     <div className="login">
+      <div className="bg-green"></div>
+      <div className="bg-darkgreen"></div>
       <div className="login__container  ">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
